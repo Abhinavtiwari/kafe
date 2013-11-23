@@ -23,7 +23,7 @@
       <tr>
         <td><%= item_menu.item_name %></td>
         <td><%= item_menu.item_category %></td>
-        <td><%= image_tag item_menu.item_picture %></td>
+        <td><%= image_tag item_menu.item_picture, :width => 100 %></td>
         <td><%= item_menu.item_price %></td>
         <td><%= item_menu.item_description %></td>
         <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, item_menu_url(item_menu), class: 'btn btn-primary' %></td>
@@ -33,4 +33,5 @@
     <% end %>
   </tbody>
 </table>
+
 
