@@ -1,7 +1,9 @@
 class TodaysSpecialsController < ApplicationController
 
   def index
-    @todays_specials = TodaysSpecial.all
+    @todays_specials = TodaysSpecial
+    @todays_specials = TodaysSpecial.order(params[:sort]) if params[:sort]
+    @todays_specials = @todays_specials.all
   end
 
   def show

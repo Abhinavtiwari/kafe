@@ -7,7 +7,7 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Day menu</th>
+      <th><%= link_to 'Day Menu', todays_specials_url(sort: "day_menu_id") %></th>
       <th>Item menu</th>
       <th>Cuisine</th>
       <th></th>
@@ -21,7 +21,7 @@
       <tr>
       
         <td><%= todays_special.day_menu.weekday %></td>
-        <td><%= todays_special.item_menu_id %></td>
+        <td><%= todays_special.item_menu.item_name %></td>
         <td><%= todays_special.cuisine %></td>
         <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, todays_special_url(todays_special), class: 'btn btn-primary' %></td>
         <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_todays_special_url(todays_special), class: 'btn btn-warning' %></td>
@@ -30,4 +30,5 @@
     <% end %>
   </tbody>
 </table>
+
 
