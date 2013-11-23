@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h1>Order links</h1>
+</div>
+
+<p><%= link_to 'Add a New Order Link', new_order_link_url, class: 'btn btn-primary' %></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Order menu</th>
+      <th>Todays special</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @order_links.each do |order_link| %>
+      <tr>
+        <td><%= order_link.order_menu_id %></td>
+        <td><%= order_link.todays_special_id %></td>
+        <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, order_link_url(order_link), class: 'btn btn-primary' %></td>
+        <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_order_link_url(order_link), class: 'btn btn-warning' %></td>
+        <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, order_link_url(order_link), method: 'delete', data: { confirm: "Do you really want to delete this order_link?" }, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

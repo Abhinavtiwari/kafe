@@ -1,0 +1,18 @@
+<div class="page-header">
+  <h1>Order #<%= @order.id %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>User</dt>
+  <dd><%= @order.user_id %></dd>
+
+  <dt>Order status</dt>
+  <dd><%= @order.order_status %></dd>
+
+  <dt>Order total</dt>
+  <dd><%= @order.order_total %></dd>
+
+  <dt>Order date</dt>
+  <dd><%= @order.order_date %></dd>
+
+</dl>

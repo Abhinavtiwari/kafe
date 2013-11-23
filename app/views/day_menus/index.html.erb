@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h1>Day menus</h1>
+</div>
+
+<p><%= link_to 'Add a New Day Menu', new_day_menu_url, class: 'btn btn-primary' %></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Weekday</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @day_menus.each do |day_menu| %>
+      <tr>
+        <td><%= day_menu.weekday %></td>
+        <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, day_menu_url(day_menu), class: 'btn btn-primary' %></td>
+        <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_day_menu_url(day_menu), class: 'btn btn-warning' %></td>
+        <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, day_menu_url(day_menu), method: 'delete', data: { confirm: "Do you really want to delete this day_menu?" }, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
