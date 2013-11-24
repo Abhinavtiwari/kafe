@@ -1,5 +1,11 @@
 class TodaysSpecialsController < ApplicationController
+before_action(:authorize_user)
 
+def authorize_user
+unless user_signed_in?
+  redirect_to new_user_session_path, notice: "You must be signed in."
+end 
+end
   def index
     @todays_specials = TodaysSpecial
     @todays_specials = TodaysSpecial.order(params[:sort]) if params[:sort]
